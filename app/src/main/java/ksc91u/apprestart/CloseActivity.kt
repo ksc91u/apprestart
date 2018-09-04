@@ -3,6 +3,7 @@ package ksc91u.apprestart
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_close.*
+import tw.ksc91u.appphoenix.AppPhoenix
 
 class CloseActivity : AppCompatActivity() {
 
@@ -11,9 +12,7 @@ class CloseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_close)
 
         close_btn.setOnClickListener {
-            finishAffinity()
-            DemoJobCreator.scheduleRestart()
-            System.exit(0)
+            AppPhoenix.getInstance().restart(this)
         }
     }
 }
